@@ -17,30 +17,30 @@
          <div id="formInputs">
             <div class="radioContainer">
                <label for="default">Default</label><br>
-               <input type="radio" id="default" name="preLoadedTheme">
+               <input type="radio" id="default" name="theme">
             </div>
             <div class="radioContainer">
                <label for="theme2">Theme 2</label><br>
-               <input type="radio" id="theme2" name="preLoadedTheme">
+               <input type="radio" id="theme2" name="theme">
+            </div>
+            <div class="radioContainer">
+               <label for="customTheme">Custom</label><br>
+               <input type="radio" id="customTheme" name="theme">
             </div>
             <div id="customContainer">
                <div id="dropDownContainer">
                   <label for="customThemes">Your Themes</label>
-                  <select name="customThemes" id="customThemes" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                  <select name="themes" id="customThemes" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                     <option hidden selected>Your Themes</option>
                      <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
-                     <option value="thing1">Thing 1</option>
+                     <option value="thing2">Thing 2</option>
+                     <option value="thing3">Thing 3</option>
+                     <option value="thing4">Thing 4</option>
+                     <option value="thing5">Thing 5</option>
+                     <option value="thing6">Thing 6</option>
+                     <option value="thing7">Thing 7</option>
+                     <option value="thing8">Thing 8</option>
+                     <option value="thing9">Thing 9</option>
                   </select>
                </div>
                <input type="text" placeholder="Theme Name" id="themeName">

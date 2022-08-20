@@ -60,3 +60,12 @@ h4 {
    border: 2px solid black;
    margin: 4px;
 }
+#dropDownContainer {
+   position: relative;
+}
+#customThemes {
+   position: absolute;
+   /*Temporaries*/
+   width: 80%;
+   left: 10%;
+}
