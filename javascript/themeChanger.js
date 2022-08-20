@@ -1,11 +1,12 @@
 //document.getElementById('textbox_id').value
 
 function radioClick(type) {
-   if (type === "default1") {
+   if (type == 1) {
       //do default1 stuff
-   } else if (type === "default2") {
+   } else if (type == 2) {
       //do default2 stuff
-   } else if (type === "custom") {
+   } else if (type == 3) {
       //do custom stuff
+      document.getElementById(customContainer).style
    }
 }
