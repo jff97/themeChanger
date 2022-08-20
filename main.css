@@ -35,7 +35,7 @@ h4 {
    background-color: darksalmon;
 }
 #customContainer {
-   display: inline-block;
+   display: none;
    /*Temporaries*/
    border: 2px solid black;
    margin: 5px;
