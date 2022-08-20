@@ -21,7 +21,7 @@ h4 {
 #pickerContainer {
    background-color: darkmagenta;
 }
-.radioContainer, .customContainer {
+.radioContainer {
    display: inline-block;
    /*Temporaries*/
    background-color: red;
@@ -33,17 +33,6 @@ h4 {
    padding:20px;
    height: 75px;
    background-color: darksalmon;
-}
-#customContainer {
-   display: none;
-   /*Temporaries*/
-   border: 2px solid black;
-   margin: 5px;
-}
-#formInputs {
-   /*Temporaries*/
-   border: 2px solid black;
-   margin: 4px;
 }
 .colorInput * {
    display: block;

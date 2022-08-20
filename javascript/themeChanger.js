@@ -1,6 +1,6 @@
 let default1Theme = null;
 let default2Theme = null;
-let curCustomtheme = null;
+let customTheme = null;
 
 function radioClick(type) {
    let customContainer = document.getElementById("customContainer");
@@ -64,14 +64,17 @@ function applyCustomColors() {
 }
 function initializeThemes() {
    //initialize a theme object with a name and 4 colors
-   let rootVars = getComputedStyle(document.body);
-   let color1 = rootVars.getPropertyValue('--color1');
-   let color2 = rootVars.getPropertyValue('--color2');
-   let color3 = rootVars.getPropertyValue('--color3');
-   let color4 = rootVars.getPropertyValue('--color4');
-   default1Theme = new Theme("default 1", color1, color2, color3, color4);
+   let root = document.querySelector(':root');
+   let rootStyle = getComputedStyle(root);
 
-   default2Theme = new Theme("default 2", "#", "#", "#", "#");
+   let color1 = rootStyle.getPropertyValue('--color1');
+   let color2 = rootStyle.getPropertyValue('--color2');
+   let color3 = rootStyle.getPropertyValue('--color3');
+   let color4 = rootStyle.getPropertyValue('--color4');
+   default1Theme = new Theme("default 1", color1, color2, color3, color4);
+   color1 = "#"
+
+   r.style.setProperty('--blue', 'lightblue');
    
 }
 
