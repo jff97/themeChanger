@@ -1,4 +1,6 @@
-//document.getElementById('textbox_id').value
+let default1Theme = null;
+let default2Theme = null;
+let curCustomtheme = null;
 
 function radioClick(type) {
    let customContainer = document.getElementById("customContainer");
@@ -59,10 +61,27 @@ function applyCustomColors() {
    let clrInput2 = document.getElementById("clrInput2").value;
    let clrInput3 = document.getElementById("clrInput3").value;
    let clrInput4 = document.getElementById("clrInput4").value;
-   //
 }
 function initializeThemes() {
    //initialize a theme object with a name and 4 colors
+   let rootVars = getComputedStyle(document.body);
+   let color1 = rootVars.getPropertyValue('--color1');
+   let color2 = rootVars.getPropertyValue('--color2');
+   let color3 = rootVars.getPropertyValue('--color3');
+   let color4 = rootVars.getPropertyValue('--color4');
+   default1Theme = new Theme("default 1", color1, color2, color3, color4);
+
+   default2Theme = new Theme("default 2", "#", "#", "#", "#");
+   
 }
 
 //make a theme object with a name and 4 colors
+class Theme {
+   constructor(n, h1, h2, h3, h4) {
+      this.name = n;
+      this.hex1 = h1;
+      this.hex2 = h2;
+      this.hex3 = h3;
+      this.hex4 = h4;
+   }
+}
