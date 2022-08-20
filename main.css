@@ -1,0 +1,62 @@
+:root {
+   --color1: #00FFFF;
+   --color2: #FF00FF;
+   --color3: #FFFF00;
+   --color4: #00FF00;
+}
+
+h1 {
+   background-color: var(--color1);
+}
+h2 {
+   background-color: var(--color2);
+}
+h3 {
+   background-color: var(--color3);
+}
+h4 {
+   background-color: var(--color4);
+}
+
+#pickerContainer {
+   background-color: darkmagenta;
+}
+.radioContainer, .customContainer {
+   display: inline-block;
+   /*Temporaries*/
+   background-color: red;
+}
+#dropDownContainer {
+   display: inline-block;
+   /*Temporaries*/
+   width:100px;
+   padding:20px;
+   height: 75px;
+   background-color: darksalmon;
+}
+#customContainer {
+   display: inline-block;
+   /*Temporaries*/
+   border: 2px solid black;
+   margin: 5px;
+}
+#formInputs {
+   /*Temporaries*/
+   border: 2px solid black;
+   margin: 4px;
+}
+.colorInput * {
+   display: block;
+   /*Temporaries*/
+}
+.colorInput {
+   display: inline-block;
+   /*Temporaries*/
+   background-color: darkgray;
+   margin: 4px;
+}
+#colorInputContainer {
+   /*Temporaries*/
+   border: 2px solid black;
+   margin: 4px;
+}

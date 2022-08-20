@@ -8,6 +8,68 @@
    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-   
+   <h1>Color 1</h1>
+   <h2>Color 2</h2>
+   <h3>Color 3</h3>
+   <h4>Color 4</h4>
+   <div id="simulatedContainer">
+      <div id="pickerContainer">
+         <div id="formInputs">
+            <div class="radioContainer">
+               <label for="default">Default</label><br>
+               <input type="radio" id="default" name="preLoadedTheme">
+            </div>
+            <div class="radioContainer">
+               <label for="theme2">Theme 2</label><br>
+               <input type="radio" id="theme2" name="preLoadedTheme">
+            </div>
+            <div id="customContainer">
+               <div id="dropDownContainer">
+                  <label for="customThemes">Your Themes</label>
+                  <select name="customThemes" id="customThemes" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                     <option value="thing1">Thing 1</option>
+                  </select>
+               </div>
+               <input type="text" placeholder="Theme Name" id="themeName">
+               <input type="submit">
+            </div>
+         </div>
+         <div id="colorInputContainer">
+            <div class="colorInput">
+               <label for="color1">Color 1</label>
+               <input type="color" name="color1">
+               <input type="text" placeholder="#HEX 1">
+            </div>
+            <div class="colorInput">
+               <label for="color2">Color 2</label>
+               <input type="color" name="color2">
+               <input type="text" placeholder="#HEX 2">
+            </div>
+            <div class="colorInput">
+               <label for="color3">Color 3</label>
+               <input type="color" name="color3">
+               <input type="text" placeholder="#HEX 3">
+            </div>
+            <div class="colorInput">
+               <label for="color4">Color 4</label>
+               <input type="color" name="color4">
+               <input type="text" placeholder="#HEX 4">
+            </div>
+         </div>
+      </div>
+   </div>
 </body>
 </html>
