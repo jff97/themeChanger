@@ -1,29 +1,36 @@
-let default1Theme = null;
-let default2Theme = null;
-let customTheme = null;
+//make a theme object with a name and 4 colors
+class Theme {
+   constructor(n, h1, h2, h3, h4) {
+      this.name = n;
+      this.hex1 = h1;
+      this.hex2 = h2;
+      this.hex3 = h3;
+      this.hex4 = h4;
+   }
+}
+var defaultTheme1 = null;
+var defaultTheme2 = null;
+var customTheme = null;
+initializeThemes();
 
 function radioClick(type) {
    let customContainer = document.getElementById("customContainer");
    if (type === 3) {
       //unlock color inputs
       lockUnlockColors("unlock");
-      //display the custom theme selections
-      customContainer.style.display = "inline-block";
       //change the colors displayed in the color boxes as black colors
       changeColorInputs("#000000", "#000000", "#000000", "#000000");
    } else {
       //lock color inputs
       lockUnlockColors("lock");
-      //hide custom theme selections
-      customContainer.style.display = "none";
-      let hex1 = "#FF0000", hex2 = "#FF0000", hex3 = "#FF0000", hex4 = "#FF0000";
       if (type === 1) {
-         //TODO get the colors of default and put them into hex1-4
+         //TODO get the colors of default theme 1 and put them into hex1-4
+         changeColorInputs(defaultTheme1.hex1, defaultTheme1.hex2, defaultTheme1.hex3, defaultTheme1.hex4);
       } else if (type === 2) {
-         //TODO get the colors of theme2 and put them into hex1-4
+         //TODO get the colors of default theme 2 and put them into hex1-4
+         changeColorInputs(defaultTheme2.hex1, defaultTheme2.hex2, defaultTheme2.hex3, defaultTheme2.hex4);
       }
-      //change the colors displayed in the color boxes as default 1 colors
-      changeColorInputs(hex1, hex2, hex3, hex4);
+
    }
 }
 
@@ -71,20 +78,9 @@ function initializeThemes() {
    let color2 = rootStyle.getPropertyValue('--color2');
    let color3 = rootStyle.getPropertyValue('--color3');
    let color4 = rootStyle.getPropertyValue('--color4');
-   default1Theme = new Theme("default 1", color1, color2, color3, color4);
-   color1 = "#"
+   defaultTheme1 = new Theme("default 1", color1, color2, color3, color4);
+   defaultTheme2 = new Theme("default 2","#D9B626", "#26D9B6", "#B626D9", "#FFFFFF");
+   customTheme = new Theme("custom theme", color1, color2, color3, color4);
 
-   r.style.setProperty('--blue', 'lightblue');
-   
-}
-
-//make a theme object with a name and 4 colors
-class Theme {
-   constructor(n, h1, h2, h3, h4) {
-      this.name = n;
-      this.hex1 = h1;
-      this.hex2 = h2;
-      this.hex3 = h3;
-      this.hex4 = h4;
-   }
+   //r.style.setProperty('--blue', 'lightblue');
 }
