@@ -1,0 +1,8 @@
+localStorage.setItem("lastname", "fox");
+// Retrieve
+document.getElementById("demo").innerHTML = localStorage.getItem("lastname");
+if (typeof(Storage) !== "undefined") {
+    // Code for localStorage
+} else {
+    // No web storage Support.
+}
