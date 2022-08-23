@@ -8,6 +8,10 @@
    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+   <h5>This is a main page</h5>
+   <a href="testPage.html">test Page</a>
+   <a href="themeChanger.html">Theme changer</a> <br>
+
    <button onclick="localStorage.clear();">clear local storage</button>
    <br>
    <h1>Color 1</h1>
@@ -19,15 +23,15 @@
          <div id="formInputs">
             <div class="radioContainer">
                <label for="default1">Default 1</label><br>
-               <input type="radio" id="default1" name="theme" onclick="radioClick(1)">
+               <input type="radio" id="default1" name="theme" onclick="radioClick('default1')">
             </div>
             <div class="radioContainer">
                <label for="default2">Default 2</label><br>
-               <input type="radio" id="default2" name="theme" onclick="radioClick(2)">
+               <input type="radio" id="default2" name="theme" onclick="radioClick('default2')">
             </div>
             <div class="radioContainer">
                <label for="customTheme">Custom</label><br>
-               <input type="radio" id="customTheme" name="theme" onclick="radioClick(3)">
+               <input type="radio" id="customTheme" name="theme" onclick="radioClick('customTheme')">
             </div>
          </div>
          <div id="colorInputContainer">
@@ -51,5 +55,6 @@
       </div>
    </div>
    <script src="javascript/themeChanger.js">"Your Browser does not support javascript"</script>
+   <script src="javascript/localStorageForThemes.js">"Your Browser does not support javascript"</script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 :root {
+   /*
+   Feel free to change the names of these variables but make sure to keep the two dashes
+   every color in your document should be a var that refrences these color vars
+   */
    --color1:#00ffff;
    --color2:#ff00ff;
    --color3:#ffff00;
@@ -19,42 +23,29 @@ h4 {
 }
 
 #pickerContainer {
+   /*Optional Styling below*/
    background-color: darkmagenta;
 }
 .radioContainer {
    display: inline-block;
-   /*Temporaries*/
+   /*Optional Styling below*/
    background-color: red;
 }
-#dropDownContainer {
-   display: inline-block;
-   /*Temporaries*/
-   width:100px;
-   padding:20px;
-   height: 75px;
-   background-color: darksalmon;
-}
+
 .colorInput * {
    display: block;
-   /*Temporaries*/
+   /*Optional Styling below*/
 }
 .colorInput {
    display: inline-block;
-   /*Temporaries*/
+   /*Optional Styling below*/
    background-color: darkgray;
    margin: 4px;
 }
 #colorInputContainer {
-   /*Temporaries*/
+   /*Optional Styling below*/
    border: 2px solid black;
    margin: 4px;
 }
-#dropDownContainer {
-   position: relative;
-}
-#customThemes {
-   position: absolute;
-   /*Temporaries*/
-   width: 80%;
-   left: 10%;
-}
+
+
