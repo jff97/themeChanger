@@ -12,6 +12,7 @@ class Theme {
 var defaultTheme1 = null;
 var defaultTheme2 = null;
 var customTheme = null;
+var selectedTheme = "default1";
 initializeThemes();
 
 //This function is the main flow of the program.
@@ -25,6 +26,7 @@ function radioClick(type) {
       //change the colors displayed in the color boxes to the customTheme colors
       changeColorInputs(customTheme);
       changeRootVars(customTheme);
+      selectedTheme = "customTheme";
    } else {
       //lock color inputs
       lockUnlockColors("lock");
@@ -32,12 +34,17 @@ function radioClick(type) {
          //TODO get the colors of default theme 1 and put them into hex1-4
          changeColorInputs(defaultTheme1);
          changeRootVars(defaultTheme1)
+         selectedTheme = "default1";
       } else if (type === 2) {
          //TODO get the colors of default theme 2 and put them into hex1-4
          changeColorInputs(defaultTheme2);
          changeRootVars(defaultTheme2);
+         selectedTheme = "default2";
       }
    }
+   //no matter what happens every time a radio button is clicked the selected theme needs to be updated
+   setSelectedTheme();
+   getAndUpdateSelectedTheme();
 }
 
 //this function updates the color displayed in the color input form boxes
@@ -98,7 +105,7 @@ function applyCustomColors(type) {
    setCustomTheme(customTheme);
 }
 function initializeThemes() {
-   //initialize a theme object with a name and 4 colors
+   //get the root elements style
    let root = document.querySelector(':root');
    let rootStyle = getComputedStyle(root);
    //get all the values of the :root vars
@@ -106,19 +113,42 @@ function initializeThemes() {
    let color2 = rootStyle.getPropertyValue('--color2');
    let color3 = rootStyle.getPropertyValue('--color3');
    let color4 = rootStyle.getPropertyValue('--color4');
-   //instantiate the three themes
-   defaultTheme1 = new Theme(color1, color2, color3, color4);
-   defaultTheme2 = new Theme("#D9B626", "#26D9B6", "#B626D9", "#FFFFFF");
-   getAndUpdateCustomTheme();
    if (customTheme == null) {
       //then the user does not have a theme in their local storage so use the default 1 colors
       customTheme = new Theme(color1, color2, color3, color4);
       //store the custom theme in local storage
       setCustomTheme(customTheme);
    }
+   //instantiate the default1 theme object
+   defaultTheme1 = new Theme(color1, color2, color3, color4);
+   
+   //set all the colors for default2 theme
+   color1 = "#D9B626";
+   color2 = "#26D9B6";
+   color3 = "#B626D9";
+   color4 = "#FFFFFF";
+   //instantiate the default2 theme object
+   defaultTheme2 = new Theme(color1, color2, color3, color4);
 
-   //update the colors defaultly displayed in the color inputs
-   changeColorInputs(defaultTheme1);
+   
+   getAndUpdateSelectedTheme();
+   //If the user does not have a selection in local storage make one
+   if (selectedTheme == null) {
+      selectedTheme = "default1";
+      setSelectedTheme();
+   }
+   if (selectedTheme === "default1") {
+      //update the colors displayed in the color inputs
+      changeColorInputs(defaultTheme1);
+   } else if (selectedTheme === "default2") {
+      //update the colors displayed in the color inputs
+      changeColorInputs(defaultTheme2);
+   } else if (selectedTheme === "customTheme") {
+      getAndUpdateCustomTheme();
+      changeColorInputs(customTheme);
+      lockUnlockColors("unlock");
+   }
+   updateRadioButtons();
 }
 function setCustomTheme(themeObj) {
    if (typeof(Storage) !== "undefined") {
@@ -131,11 +161,37 @@ function setCustomTheme(themeObj) {
 function getAndUpdateCustomTheme() {
    if (typeof(Storage) !== "undefined") {
       //go ahead with local storage code
-      localStorage.getItem("customTheme")
       customTheme = JSON.parse(localStorage.getItem("customTheme"));
    } else {
       //no local storage supported
    }
+}
+function setSelectedTheme() {
+   if (selectedTheme === "default1") {
+      localStorage.setItem("selection", "default1");
+   } else if (selectedTheme === "default2") {
+      localStorage.setItem("selection", "default2");
+   } else if (selectedTheme === "customTheme") {
+      localStorage.setItem("selection", "customTheme");
+   } else {
+      localStorage.setItem("selection", "test");
+   }
+}
+function getAndUpdateSelectedTheme() {
+   selectedTheme = localStorage.getItem("selection");
+}
+function updateRadioButtons() {
+   let radioButton = null;
+   if (selectedTheme === "default1") {
+      radioButton = document.getElementById("default1");
+   } else if (selectedTheme === "default2") {
+      radioButton = document.getElementById("default2");
+   } else if (selectedTheme === "customTheme") {
+      radioButton = document.getElementById("customTheme");
+   } else {
+      radioButton = document.getElementById("default1");
+   }
+   radioButton.checked = true;
 }
 
 
