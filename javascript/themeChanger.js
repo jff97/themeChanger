@@ -43,7 +43,6 @@ function radioClick(type) {
       }
    }
    //no matter what happens every time a radio button is clicked the selected theme needs to be updated
-   alert(selectedTheme);
    setSelectedTheme();
    getAndUpdateSelectedTheme();
 }
@@ -114,11 +113,17 @@ function initializeThemes() {
    let color2 = rootStyle.getPropertyValue('--color2');
    let color3 = rootStyle.getPropertyValue('--color3');
    let color4 = rootStyle.getPropertyValue('--color4');
+   getAndUpdateSelectedTheme();
    if (customTheme == null) {
       //then the user does not have a theme in their local storage so use the default 1 colors
       customTheme = new Theme(color1, color2, color3, color4);
       //store the custom theme in local storage
       setCustomTheme(customTheme);
+   }
+   //If the user does not have a selection in local storage make one
+   if (selectedTheme == null) {
+      selectedTheme = "default1";
+      setSelectedTheme();
    }
    //instantiate the default1 theme object
    defaultTheme1 = new Theme(color1, color2, color3, color4);
@@ -132,12 +137,6 @@ function initializeThemes() {
    defaultTheme2 = new Theme(color1, color2, color3, color4);
 
    
-   getAndUpdateSelectedTheme();
-   //If the user does not have a selection in local storage make one
-   if (selectedTheme == null) {
-      selectedTheme = "default1";
-      setSelectedTheme();
-   }
    if (selectedTheme === "default1") {
       //update the colors displayed in the color inputs
       changeColorInputs(defaultTheme1);
