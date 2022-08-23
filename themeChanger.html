@@ -17,7 +17,7 @@
          <div id="formInputs">
             <div class="radioContainer">
                <label for="default1">Default 1</label><br>
-               <input type="radio" id="default1" name="theme" onclick="radioClick(1)">
+               <input type="radio" id="default1" name="theme" onclick="radioClick(1)" checked="checked">
             </div>
             <div class="radioContainer">
                <label for="default2">Default 2</label><br>
@@ -31,22 +31,19 @@
          <div id="colorInputContainer">
             <div class="colorInput">
                <label for="clrInput1">Color 1</label>
-               <input type="color" name="clrInput1" id="clrInput1" disabled>
+               <input type="color" name="clrInput1" id="clrInput1" disabled onchange="applyCustomColors()">
             </div>
             <div class="colorInput">
                <label for="clrInput2">Color 2</label>
-               <input type="color" name="clrInput2" id="clrInput2" disabled>
+               <input type="color" name="clrInput2" id="clrInput2" disabled onchange="applyCustomColors()">
             </div>
             <div class="colorInput">
                <label for="clrInput3">Color 3</label>
-               <input type="color" name="clrInput3" id="clrInput3" disabled>
+               <input type="color" name="clrInput3" id="clrInput3" disabled onchange="applyCustomColors()">
             </div>
             <div class="colorInput">
                <label for="clrInput4">Color 4</label>
-               <input type="color" name="clrInput4" id="clrInput4" disabled>
-            </div>
-            <div class="colorInput">
-               <button onclick="applyCustomColors()">Apply Colors</button>
+               <input type="color" name="clrInput4" id="clrInput4" disabled onchange="applyCustomColors()">
             </div>
          </div>
       </div>
