@@ -118,7 +118,6 @@ function initializeThemes() {
    getAndUpdateSelectedTheme();
    getAndUpdateCustomTheme();
    if (customTheme == null) {
-      alert("customTheme is null");
       //then the user does not have a theme in their local storage so use the default 1 colors
       customTheme = new Theme(color1, color2, color3, color4);
       //store the custom theme in local storage
@@ -144,12 +143,15 @@ function initializeThemes() {
    if (selectedTheme === "default1") {
       //update the colors displayed in the color inputs
       changeColorInputs(defaultTheme1);
+      changeRootVars(defaultTheme1);
    } else if (selectedTheme === "default2") {
       //update the colors displayed in the color inputs
       changeColorInputs(defaultTheme2);
+      changeRootVars(defaultTheme2);
    } else if (selectedTheme === "customTheme") {
       getAndUpdateCustomTheme();
       changeColorInputs(customTheme);
+      changeRootVars(customTheme);
       lockUnlockColors("unlock");
    }
    updateRadioButtons();
