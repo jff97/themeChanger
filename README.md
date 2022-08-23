@@ -1,5 +1,6 @@
 # themeChanger
 A theme Changer with 3 options default 1 default 2 and custom theme
+Use the latest release tag for source code
 
 Steps to make this widget work in your own website
 1.  Before using this code make your target website's colors all be dependent on CSS :root vars.
