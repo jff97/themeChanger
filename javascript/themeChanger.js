@@ -103,6 +103,8 @@ function applyCustomColors(type) {
    changeRootVars(customTheme);
    //store the theme object in local storage
    setCustomTheme(customTheme);
+   selectedTheme = "customTheme";
+   getAndUpdateSelectedTheme();
 }
 function initializeThemes() {
    //get the root elements style
@@ -114,7 +116,9 @@ function initializeThemes() {
    let color3 = rootStyle.getPropertyValue('--color3');
    let color4 = rootStyle.getPropertyValue('--color4');
    getAndUpdateSelectedTheme();
+   getAndUpdateCustomTheme();
    if (customTheme == null) {
+      alert("customTheme is null");
       //then the user does not have a theme in their local storage so use the default 1 colors
       customTheme = new Theme(color1, color2, color3, color4);
       //store the custom theme in local storage
