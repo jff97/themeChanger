@@ -43,6 +43,7 @@ function radioClick(type) {
       }
    }
    //no matter what happens every time a radio button is clicked the selected theme needs to be updated
+   alert(selectedTheme);
    setSelectedTheme();
    getAndUpdateSelectedTheme();
 }
