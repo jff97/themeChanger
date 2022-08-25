@@ -1,6 +1,6 @@
 /**
  * @file Manages the color picker storage and manipulation
- * @author John Fox
+ * author John Fox
  */
 
 /**
