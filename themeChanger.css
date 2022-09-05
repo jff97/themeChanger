@@ -1,14 +1,4 @@
-:root {
-   /*
-   Feel free to change the names of these variables but make sure to keep the two dashes
-   every color in your document should be a var that refrences these color vars
-   */
-   --color1:#00ffff;
-   --color2:#ff00ff;
-   --color3:#ffff00;
-   --color4:#00ff00;
-}
-
+/*Dont add the header styles below to your document*/
 h1 {
    background-color: var(--color1);
 }
@@ -20,6 +10,19 @@ h3 {
 }
 h4 {
    background-color: var(--color4);
+}
+
+
+/*Everything below this add to your css document*/
+:root {
+   /*
+   Feel free to change the names of these variables but make sure to keep the two dashes
+   every color in your document should be a var that refrences these color vars
+   */
+   --color1:#00ffff;
+   --color2:#ff00ff;
+   --color3:#ffff00;
+   --color4:#00ff00;
 }
 
 #themeContainer {
