@@ -12,3 +12,4 @@ Steps to make this widget work in your own website
 5.  Link the styles located in theme.css to all documents that will use the theme changer or copy and paste the styles into your own existing style document
 6.  Make sure to style the theme changer to work where you put it in your website. 
     Styling and display work has intententionally been left out of this document so you can style it yourself.
+7.  Check out a integrated and styled version at the bottom of every page on [johnfoxweb.com](https://www.johnfoxweb.com/)
