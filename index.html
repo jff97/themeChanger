@@ -8,15 +8,46 @@
    <link rel="stylesheet" href="themeChanger.css">
 </head>
 <body>
-   <h5>This is a main page</h5>
    <a href="testPage.html">test Page</a>
-   <a href="themeChanger.html">Theme changer</a> <br>
+   <a href="themeChanger.html">Theme changer</a>
+   <h5>This is the main page</h5>
 
    <button onclick="localStorage.clear();">clear local storage (this is only necessary for debugging)</button>
    <br>
    <h1>Color 1</h1>
    <h2>Color 2</h2>
-   <h3>Color 3</h3>
+   <h3>
+      <ol>
+         <li>
+            Before using this code make your target website's colors all be dependent on CSS :root vars.
+            <a href="https://www.w3schools.com/css/css3_variables.asp" target="_blank">CSS root: vars tutorial</a>
+         </li>
+         <br>
+         <li>
+            Change all icons in the website to font awesome icons which you can change color with css
+         </li>
+         <br>
+         <li>
+            From index.html take the div with id="themeContainer" along with all contents and put it wherever you want the theme changer on your website
+         </li>
+         <br>
+         <li>
+            Link the script "themechanger.js" right before the end of the body element in all documents that will use the theme changer
+         </li>
+         <br>
+         <li>
+            Link the styles located in theme.css to all documents that will use the theme changer or copy and paste the styles into your own existing style document
+         </li>
+         <br>
+         <li>
+            Make sure to style the theme changer to work where you put it in your website. Some styling and display work has intententionally been left out of this document so it is easier to embed in your own website. 
+         </li>
+         <br>
+         <li>
+            Check out a integrated and styled version at the bottom of every page on <a href="https://www.johnfoxweb.com/">johnfoxweb.com</a>
+         </li>
+      </ol>
+   </h3>
    <h4>Color 4</h4>
    <div id="simulatedContainer">
       <div id="themeContainer">
